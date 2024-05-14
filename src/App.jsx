@@ -6,8 +6,9 @@ import "./App.css";
 function App() {
   return (
     <>
-      <h1>Kalafard</h1>
-      <div className="card">
+      <div className="main">
+        <h1>KALAFARD</h1>
+        <div className="card"></div>
         <button>losu losu</button>
         <p>Kalafard by WitroxHunter & 7even</p>
       </div>
