@@ -5,11 +5,12 @@
 
   color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
-  background-color: var(--UIbackground);
+  background: rgb(147,207,132);
+  background: radial-gradient(circle, rgba(147,207,132,1) 0%, rgba(200,255,139,1) 100%);
 
   --UIbackground: #64b06c;
   --UIbutton: #a9bf7f;
-  --FontTitle: #fff879;
+  --FontTitle: #000000;
 }
 
 a {
@@ -23,7 +24,7 @@ a:hover {
 
 @font-face {
   font-family: money;
-  src: url("/src/assets/fonts/money.ttf");
+  src: url("/src/assets/fonts/bucks.ttf");
 }
 
 body {
