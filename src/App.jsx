@@ -13,7 +13,6 @@ const quote_list = [
   ["Jogurt gradientowy istnieje"], // niedzwiedz
   ["Nie rzucaj mięsem"],
 ]; // martyna
-let random_quote;
 
 function App() {
   return (
@@ -31,6 +30,7 @@ function App() {
 function LosuComponent() {
   const [currentQuote, setCurrentQuote] = useState("");
   const [chosenRow, setChosenRow] = useState("");
+  let random_quote;
 
   function GetRandomQuote() {
     var chosen_row = Math.floor(Math.random() * 6);
@@ -45,14 +45,7 @@ function LosuComponent() {
 
   return (
     <>
-      <button
-        onClick={() => {
-          GetRandomQuote();
-          console.log(random_quote);
-        }}
-      >
-        Losuj quote
-      </button>
+      <button onClick={GetRandomQuote}>Losuj quote</button>
       {currentQuote}
       <br />
       {chosenRow}
