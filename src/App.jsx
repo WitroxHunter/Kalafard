@@ -43,7 +43,7 @@ function LosuComponent() {
 
   return (
     <>
-      <button onClick={GetRandomQuote}>Losuj quote</button>
+      <button onClick={GetRandomQuote}>Losuj quote!</button>
       {currentQuote}
       <br />
       {chosenRow}
