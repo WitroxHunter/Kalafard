@@ -6,9 +6,6 @@ import "./App.css";
 const quote_list = ["ludzie śpią", "gradientowy jogurt istnieje", "eeeem", "lubie umięśnionych mężczyzn"];
 
 function App() {
-
-  let chosen_quote = GetRandomQuote();
-  
   return (
     <>
       <div className="main">
