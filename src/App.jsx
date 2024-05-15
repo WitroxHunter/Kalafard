@@ -3,8 +3,24 @@ import reactLogo from "./assets/react.svg";
 import viteLogo from "/vite.svg";
 import "./App.css";
 
-const quote_list = ["ludzie śpią", "gradientowy jogurt istnieje", "eeeem", "lubie umięśnionych mężczyzn", "moi rodzice sa nubkami"];
-let random_quote
+// michaj
+// pio
+// wiktor
+// klubiś
+// mbycz
+// kubibex
+// niedzwiedz
+// martyna
+
+const quote_list = 
+[["Ludzie śpią", "Moi rodzice są nubkami", "eeeem"],
+["Ej bez kitu", "To nieźle..."], 
+[], 
+[], 
+[], 
+[], 
+["Jogurt gradientowy istnieje"], 
+["Nie rzucaj mięsem"]]
 
 function App() {
   return (
