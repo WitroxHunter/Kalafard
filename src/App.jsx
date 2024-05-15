@@ -7,8 +7,8 @@ const quote_list = ["ludzie śpią", "gradientowy jogurt istnieje", "eeeem", "lu
 
 function App() {
 
-  let chosen_quote = quote_list[Math.floor(Math.random() * (quote_list.length))]
-
+  let chosen_quote = GetRandomQuote();
+  
   return (
     <>
       <div className="main">
