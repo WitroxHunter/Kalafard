@@ -14,7 +14,6 @@ const quote_list = [
   ["Nie rzucaj mięsem"],
 ]; // martyna
 let random_quote;
-var bools = [0, 0, 0, 0, 0, 0, 0];
 
 function App() {
   return (
@@ -40,7 +39,7 @@ function LosuComponent() {
       quote_list[chosen_row][
         Math.floor(Math.random() * quote_list[chosen_row].length)
       ];
-    bools[chosen_row] = 1;
+
     setCurrentQuote(random_quote);
   }
 
