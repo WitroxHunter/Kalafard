@@ -3,7 +3,7 @@ import reactLogo from "./assets/react.svg";
 import viteLogo from "/vite.svg";
 import "./App.css";
 
-const quote_list = ["ludzie śpią", "gradientowy jogurt istnieje", "eeeem", "lubie umięśnionych mężczyzn"];
+const quote_list = ["ludzie śpią", "gradientowy jogurt istnieje", "eeeem", "lubie umięśnionych mężczyzn", "moi rodzice sa nubkami"];
 let random_quote
 
 function App() {
@@ -26,4 +26,4 @@ function GetRandomQuote() {
   random_quote = quote_list[Math.floor(Math.random() * (quote_list.length))]
 }
 
-export default App;
+export default App
