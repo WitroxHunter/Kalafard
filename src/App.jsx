@@ -31,9 +31,11 @@ function App() {
 
 function LosuComponent() {
   const [currentQuote, setCurrentQuote] = useState("");
+  const [chosenRow, setChosenRow] = useState("");
 
   function GetRandomQuote() {
     var chosen_row = Math.floor(Math.random() * 6);
+    setChosenRow(chosen_row);
     random_quote =
       quote_list[chosen_row][
         Math.floor(Math.random() * quote_list[chosen_row].length)
@@ -53,6 +55,8 @@ function LosuComponent() {
         Losuj quote
       </button>
       {currentQuote}
+      <br />
+      {chosenRow}
     </>
   );
 }
