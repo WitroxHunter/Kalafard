@@ -6,13 +6,15 @@ import "./App.css";
 const quote_list = ["ludzie śpią", "gradientowy jogurt istnieje", "eeeem", "lubie umięśnionych mężczyzn"];
 
 function App() {
+
   return (
     <>
       <div className="main">
         <h1>KALAFARD</h1>
         <div className="card"></div>
-        <button>losu losu</button>
-        <p>Kalafard by WitroxHunter & 7even {chosen_quote}</p>
+        <button onClick={() => {
+        }}>losu losu</button>
+        <p>Kalafard by WitroxHunter & 7even {GetRandomQuote()}</p>
       </div>
     </>
   );
