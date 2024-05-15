@@ -3,24 +3,17 @@ import reactLogo from "./assets/react.svg";
 import viteLogo from "/vite.svg";
 import "./App.css";
 
-// michaj
-// pio
-// wiktor
-// klubiś
-// mbycz
-// kubibex
-// niedzwiedz
-// martyna
-
 const quote_list = 
-[["Ludzie śpią", "Moi rodzice są nubkami", "eeeem"],
-["Ej bez kitu", "To nieźle..."], 
-[], 
-[], 
-[], 
-[], 
-["Jogurt gradientowy istnieje"], 
-["Nie rzucaj mięsem"]]
+[["Ludzie śpią", "Moi rodzice są nubkami", "eeeem"], // michaj
+["Ej bez kitu", "To nieźle..."], // pio
+["NULL"], // wiktor
+["NULL"], // klubiś
+["NULL"], // mbycz
+["NULL"], // kubibex
+["Jogurt gradientowy istnieje"], // niedzwiedz
+["Nie rzucaj mięsem"]] // martyna
+let random_quote
+var bools = [0, 0, 0, 0, 0, 0, 0]
 
 function App() {
   return (
@@ -39,7 +32,10 @@ function App() {
 }
 
 function GetRandomQuote() {
-  random_quote = quote_list[Math.floor(Math.random() * (quote_list.length))]
+  var chosen_row = Math.floor(Math.random() * 6)
+  random_quote = quote_list[chosen_row][Math.floor(Math.random() * (quote_list[chosen_row].length))]
+  bools[chosen_row] = 1
 }
+
 
 export default App
