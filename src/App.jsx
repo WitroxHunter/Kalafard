@@ -12,6 +12,7 @@ const quote_list = [
   ["Nie rzucaj mięsem"], // martyna
 ];
 
+let pool = [];
 let last_chosen_quote;
 
 function App() {
@@ -27,31 +28,61 @@ function App() {
   );
 }
 
+function CheckQuoteListLen() {
+  let list_len = 0;
+  for(let i = 0; i <= 7; i++) {
+    for(let a = 0; a < quote_list[i].length; a++){
+      list_len++;
+    }
+  }
+
+  return(list_len)
+}
+
+function CheckIfInArray(arrayA, elementA) {
+  let is_in_array = 0;
+
+  for(let i = 0; i <= arrayA.length; i++) {
+    if(elementA == arrayA[i]) {
+      is_in_array = 1;
+    }
+  }
+
+  return(is_in_array)
+}
+
 function LosuComponent() {
   const [currentQuote, setCurrentQuote] = useState("");
   const [chosenRow, setChosenRow] = useState("");
   const [end_screen, setEndScreen] = useState("");
+  const [quotes_left, setQuotesLeft] = useState("");
 
   let random_quote;
 
   function GetRandomQuote() {
-    var chosen_row = Math.floor(Math.random() * 7);
+    setEndScreen("")
+    var chosen_row = Math.floor(Math.random() * 8);
     setChosenRow(chosen_row);
     random_quote =
       quote_list[chosen_row][
         Math.floor(Math.random() * quote_list[chosen_row].length)
       ];
-    console.log(last_chosen_quote, random_quote);
 
     //Nie powtarza się
-    if(last_chosen_quote != random_quote) {
-      setCurrentQuote(random_quote);
-      last_chosen_quote = random_quote;
-    } else if(last_chosen_quote == random_quote){
-      console.log("aaaaa")
+    if(CheckIfInArray(pool, random_quote) == 0) {
+      if(last_chosen_quote != random_quote) {
+        setCurrentQuote(random_quote);
+        last_chosen_quote = random_quote;
+        pool.push(random_quote);
+        setQuotesLeft(CheckQuoteListLen() - pool.length)
+      } else if(last_chosen_quote == random_quote){
+        GetRandomQuote();
+      }
+    } else if(CheckIfInArray(pool, random_quote) != 0 && pool.length != CheckQuoteListLen()) {
       GetRandomQuote();
+    } else if(pool.length == CheckQuoteListLen()) {
+      setCurrentQuote("Nie ma więcej cytatów")
     }
-    
   }
 
   function CheckGussedQuote(a) {
@@ -67,6 +98,8 @@ function LosuComponent() {
       {chosenRow}
       <br/>
       {end_screen}
+      <br />
+      {quotes_left}
       <button onClick={()=>{CheckGussedQuote(0)}}>Michaj</button>
       <button onClick={()=>{CheckGussedQuote(1)}}>Pio</button>
       <button onClick={()=>{CheckGussedQuote(2)}}>Wiktor</button>
