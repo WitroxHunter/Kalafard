@@ -12,6 +12,8 @@ const quote_list = [
   ["Nie rzucaj mięsem"], // martyna
 ];
 
+let last_chosen_quote;
+
 function App() {
   return (
     <>
@@ -39,8 +41,17 @@ function LosuComponent() {
       quote_list[chosen_row][
         Math.floor(Math.random() * quote_list[chosen_row].length)
       ];
+    console.log(last_chosen_quote, random_quote);
 
-    setCurrentQuote(random_quote);
+    //Nie powtarza się
+    if(last_chosen_quote != random_quote) {
+      setCurrentQuote(random_quote);
+      last_chosen_quote = random_quote;
+    } else if(last_chosen_quote == random_quote){
+      console.log("aaaaa")
+      GetRandomQuote();
+    }
+    
   }
 
   function CheckGussedQuote(a) {
