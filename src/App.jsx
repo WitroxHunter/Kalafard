@@ -31,7 +31,6 @@ function LosuComponent() {
   const [end_screen, setEndScreen] = useState("");
 
   let random_quote;
-  var guessed_quote;
 
   function GetRandomQuote() {
     var chosen_row = Math.floor(Math.random() * 7);
@@ -44,6 +43,11 @@ function LosuComponent() {
     setCurrentQuote(random_quote);
   }
 
+  function CheckGussedQuote(a) {
+    if(chosenRow == a) {setEndScreen("W")} 
+    else if(chosenRow != a) {setEndScreen("L")}
+  }
+
   return (
     <>
       <button onClick={GetRandomQuote}>Losuj quote!</button>
@@ -52,15 +56,15 @@ function LosuComponent() {
       {chosenRow}
       <br/>
       {end_screen}
-      <button onClick={()=>{if(chosenRow == 0) {setEndScreen("W")} else if(chosenRow != guessed_quote) {setEndScreen("L")}}}>Michaj</button>
-      <button onClick={()=>{if(chosenRow == 1) {setEndScreen("W")} else if(chosenRow != guessed_quote) {setEndScreen("L")}}}>Pio</button>
-      <button onClick={()=>{if(chosenRow == 2) {setEndScreen("W")} else if(chosenRow != guessed_quote) {setEndScreen("L")}}}>Wiktor</button>
-      <button onClick={()=>{if(chosenRow == 3) {setEndScreen("W")} else if(chosenRow != guessed_quote) {setEndScreen("L")}}}>Klubiś</button>
+      <button onClick={()=>{CheckGussedQuote(0)}}>Michaj</button>
+      <button onClick={()=>{CheckGussedQuote(1)}}>Pio</button>
+      <button onClick={()=>{CheckGussedQuote(2)}}>Wiktor</button>
+      <button onClick={()=>{CheckGussedQuote(3)}}>Klubiś</button>
       <br/>
-      <button onClick={()=>{if(chosenRow == 4) {setEndScreen("W")} else if(chosenRow != guessed_quote) {setEndScreen("L")}}}>Mbycz</button>
-      <button onClick={()=>{if(chosenRow == 5) {setEndScreen("W")} else if(chosenRow != guessed_quote) {setEndScreen("L")}}}>Kubisex</button>
-      <button onClick={()=>{if(chosenRow == 6) {setEndScreen("W")} else if(chosenRow != guessed_quote) {setEndScreen("L")}}}>Niedźwiedź</button>
-      <button onClick={()=>{if(chosenRow == 7) {setEndScreen("W")} else if(chosenRow != guessed_quote) {setEndScreen("L")}}}>Martyna</button>
+      <button onClick={()=>{CheckGussedQuote(4)}}>Mbycz</button>
+      <button onClick={()=>{CheckGussedQuote(5)}}>Kubisex</button>
+      <button onClick={()=>{CheckGussedQuote(6)}}>Niedźwiedź</button>
+      <button onClick={()=>{CheckGussedQuote(7)}}>Martyna</button>
     </>
   );
 }
